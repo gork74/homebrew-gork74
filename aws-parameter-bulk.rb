@@ -5,11 +5,11 @@
 class AwsParameterBulk < Formula
   desc ""
   homepage "https://github.com/gork74/aws-parameter-bulk"
-  version "0.0.10"
+  version "0.0.11"
 
   on_macos do
-    url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.10/aws-parameter-bulk_0.0.10_darwin_all.tar.gz"
-    sha256 "a0e1226da54c38a75c8d609a0fabdf09da56402bed45b063c33f83a3bd55e976"
+    url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.11/aws-parameter-bulk_0.0.11_darwin_all.tar.gz"
+    sha256 "33015dea0e20395da77a582701ce887c10139cf13c14ddacfd228915857f3c75"
 
     def install
       bin.install "aws-parameter-bulk"
@@ -17,28 +17,34 @@ class AwsParameterBulk < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.10/aws-parameter-bulk_0.0.10_linux_amd64.tar.gz"
-      sha256 "fdd7c240c0b417af031ead90c82851635f5ffd78e31ad2ecda3c1603455c3ad5"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.11/aws-parameter-bulk_0.0.11_linux_amd64.tar.gz"
+        sha256 "75a9a93c6a608fbdac00316f4e0624069ba44299d5d72e4027746fd63c7425df"
 
-      def install
-        bin.install "aws-parameter-bulk"
+        def install
+          bin.install "aws-parameter-bulk"
+        end
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.10/aws-parameter-bulk_0.0.10_linux_armv6.tar.gz"
-      sha256 "03eb71c25b9bd79ea93ec8818a14e18c103e8b52cfca5f1cc03244dd6137eeee"
+    on_arm do
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.11/aws-parameter-bulk_0.0.11_linux_armv6.tar.gz"
+        sha256 "cb682577cc02ce05c94079a6840bc361f51655fe77b352e69e3622859f1b698b"
 
-      def install
-        bin.install "aws-parameter-bulk"
+        def install
+          bin.install "aws-parameter-bulk"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.10/aws-parameter-bulk_0.0.10_linux_arm64.tar.gz"
-      sha256 "61a5094b5fce4a11eb873c664758d5cfec698f6024e5c727aabbcd3aaea9c7c6"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.11/aws-parameter-bulk_0.0.11_linux_arm64.tar.gz"
+        sha256 "6e45a8e5df416851d06f9e0265363c02e1bcb4789360b7e04cdd8cd35dd58946"
 
-      def install
-        bin.install "aws-parameter-bulk"
+        def install
+          bin.install "aws-parameter-bulk"
+        end
       end
     end
   end
