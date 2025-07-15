@@ -5,11 +5,11 @@
 class AwsParameterBulk < Formula
   desc ""
   homepage "https://github.com/gork74/aws-parameter-bulk"
-  version "0.0.15"
+  version "0.0.16"
 
   on_macos do
-    url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.15/aws-parameter-bulk_0.0.15_darwin_all.tar.gz"
-    sha256 "9b11aa086d84093b4972291ee023fd54a718bf1d6e6540497da160693e165ae9"
+    url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.16/aws-parameter-bulk_0.0.16_darwin_all.tar.gz"
+    sha256 "b13ccbbf0b9955b267a1e05883525d70f821ac881a81419feb8768d7ec70819f"
 
     def install
       bin.install "aws-parameter-bulk"
@@ -19,8 +19,8 @@ class AwsParameterBulk < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.15/aws-parameter-bulk_0.0.15_linux_amd64.tar.gz"
-        sha256 "7f454e84798d3f2dc612a4fdca9d0e7ec1f0bc7ca08941b059feeec19509117e"
+        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.16/aws-parameter-bulk_0.0.16_linux_amd64.tar.gz"
+        sha256 "9b37bb8c8708f9462f7652f06463bd8d038852d42e0c7d95e27b38ac63ff861c"
 
         def install
           bin.install "aws-parameter-bulk"
@@ -29,8 +29,8 @@ class AwsParameterBulk < Formula
     end
     on_arm do
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.15/aws-parameter-bulk_0.0.15_linux_armv6.tar.gz"
-        sha256 "ddbff43917dd76b2feed15007582f32c5a607efd110949672e5b186fd7525769"
+        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.16/aws-parameter-bulk_0.0.16_linux_armv6.tar.gz"
+        sha256 "697705f72c44cf8e3c6d89e49f76b6b254eda0d115ba7e5c4cbef8090b0d1f60"
 
         def install
           bin.install "aws-parameter-bulk"
@@ -39,8 +39,8 @@ class AwsParameterBulk < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.15/aws-parameter-bulk_0.0.15_linux_arm64.tar.gz"
-        sha256 "03691f48c28b522d3f74ded83a547f8bf68ed14f25d0bbe57ceca21461f5e07f"
+        url "https://github.com/gork74/aws-parameter-bulk/releases/download/v0.0.16/aws-parameter-bulk_0.0.16_linux_arm64.tar.gz"
+        sha256 "bd689e8710461777f538a262bf4dd0f87fb8d274925b1cdd54c28e74eb6d92f5"
 
         def install
           bin.install "aws-parameter-bulk"
